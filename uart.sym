@@ -1,0 +1,159 @@
+__S0 2008 0 ABS
+__S1 79 0 ABS
+__S2 0 0 ABS
+__Hintentry 0 0 CODE
+__Lintentry 0 0 CODE
+_RCIF 65 0 ABS
+_TXIF 64 0 ABS
+_main 7DF 0 CODE
+btemp 7E 0 ABS
+_exit 0 0 CODE
+start 0 0 CODE
+_RCREG 1A 0 ABS
+_RCSTA 18 0 ABS
+_TXREG 19 0 ABS
+reset_vec 0 0 CODE
+_SPBRG 99 0 ABS
+_TXSTA 98 0 ABS
+?_uart_string_transmit 71 0 COMMON
+wtemp0 7E 0 ABS
+__end_of_uart_transmit 7DF 0 CODE
+__Hconfig 2008 0 CONFIG
+__Lconfig 2007 0 CONFIG
+__Hram 0 0 ABS
+__Lram 0 0 ABS
+?_main 70 0 COMMON
+__Hfunctab 0 0 CODE
+__Lfunctab 0 0 CODE
+__Hcommon 0 0 ABS
+__Lcommon 0 0 ABS
+__Heeprom_data 0 0 EEDATA
+__Leeprom_data 0 0 EEDATA
+_uart_receive 7AF 0 CODE
+__Habs1 0 0 ABS
+__Labs1 0 0 ABS
+__Hsfr0 0 0 ABS
+__Lsfr0 0 0 ABS
+__Hsfr1 0 0 ABS
+__Lsfr1 0 0 ABS
+__end_of_uart_string_transmit 7D8 0 CODE
+__Hsfr2 0 0 ABS
+__Lsfr2 0 0 ABS
+__Hsfr3 0 0 ABS
+__Lsfr3 0 0 ABS
+__Hcode 0 0 ABS
+__Lcode 0 0 ABS
+??_main 76 0 COMMON
+_uart_string_transmit 7BE 0 CODE
+uart_string_transmit@string_length 71 0 COMMON
+__Hinit 0 0 CODE
+__Linit 0 0 CODE
+__end_of_main 800 0 CODE
+__Htext 0 0 ABS
+__Ltext 0 0 ABS
+end_of_initialization 7AB 0 CODE
+??_uart_string_transmit 73 0 COMMON
+__size_of_uart_transmit 0 0 ABS
+uart_transmit@data 70 0 COMMON
+__Hstrings 0 0 ABS
+__Lstrings 0 0 ABS
+__pstrings 3 0 STRING
+_uart_init 7B4 0 CODE
+?_uart_receive 70 0 COMMON
+__end_of_uart_receive 7B4 0 CODE
+__Hbank0 0 0 ABS
+__Lbank0 0 0 ABS
+uart_string_transmit@i 74 0 COMMON
+__Hbank1 0 0 ABS
+__Lbank1 0 0 ABS
+__Hbank2 0 0 ABS
+__Lbank2 0 0 ABS
+__Hbank3 0 0 ABS
+__Lbank3 0 0 ABS
+__Hpowerup 0 0 CODE
+__Lpowerup 0 0 CODE
+__end_of_uart_init 7BE 0 CODE
+_uart_transmit 7D8 0 CODE
+__Hclrtext 0 0 ABS
+__Lclrtext 0 0 ABS
+__size_of_uart_init 0 0 ABS
+??_uart_init 70 0 COMMON
+__Hidloc 0 0 IDLOC
+__Lidloc 0 0 IDLOC
+__Hcinit 0 0 ABS
+__Lcinit 0 0 ABS
+__size_of_main 0 0 ABS
+__Hpa_nodes 0 0 ABS
+__Lpa_nodes 0 0 ABS
+__ptext70 7B4 0 CODE
+__ptext71 0 0 CODE
+__ptext66 0 0 CODE
+__ptext67 7BE 0 CODE
+__ptext68 7AF 0 CODE
+__ptext69 7D8 0 CODE
+__Hend_init 3 0 CODE
+__Lend_init 0 0 CODE
+?_uart_init 70 0 COMMON
+??_uart_transmit 70 0 COMMON
+??_uart_receive 70 0 COMMON
+__Hreset_vec 0 0 CODE
+__Lreset_vec 0 0 CODE
+__size_of_uart_string_transmit 0 0 ABS
+__size_of_uart_receive 0 0 ABS
+intlevel0 0 0 CODE
+intlevel1 0 0 CODE
+uart_string_transmit@string 73 0 COMMON
+intlevel2 0 0 CODE
+intlevel3 0 0 CODE
+intlevel4 0 0 CODE
+intlevel5 0 0 CODE
+__HcstackCOMMON 0 0 ABS
+__LcstackCOMMON 0 0 ABS
+?_uart_transmit 70 0 COMMON
+__pcstackCOMMON 70 0 COMMON
+start_initialization 7AB 0 CODE
+__Hmaintext 0 0 ABS
+__Lmaintext 0 0 ABS
+__pmaintext 7DF 0 CODE
+%segments
+reset_vec 0 5 CODE 0
+config 400E 400F CONFIG 400E
+cstackCOMMON 70 78 COMMON 70
+maintext FBE FFF CODE FBE
+text67 F7C FBD CODE F7C
+strings 6 23 STRING 6
+text70 F68 F7B CODE F68
+text68 F5E F67 CODE F5E
+cinit F56 F5D CODE F56
+%locals
+startup.obj
+startup.as
+65 0 0 CODE
+uart.obj
+D:\pic_youtube_tutorials\uart.c
+3 2007 0 CONFIG
+uart.as
+107 7AB 0 CODE
+108 7AC 0 CODE
+D:\pic_youtube_tutorials\uart.c
+47 7DF 0 CODE
+50 7E4 0 CODE
+51 7ED 0 CODE
+52 7FA 0 CODE
+55 800 0 CODE
+20 7BE 0 CODE
+21 7BF 0 CODE
+23 7C9 0 CODE
+21 7D4 0 CODE
+25 7D8 0 CODE
+14 7D8 0 CODE
+15 7D9 0 CODE
+16 7DC 0 CODE
+17 7DE 0 CODE
+32 7AF 0 CODE
+34 7B2 0 CODE
+39 7B3 0 CODE
+7 7B4 0 CODE
+8 7B7 0 CODE
+9 7BA 0 CODE
+11 7BD 0 CODE

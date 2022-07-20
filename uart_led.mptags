@@ -1,0 +1,20 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.5.4	//
+!_TAG_REVISION_NAME	MCHPTags	//
+!_TAG_REVISION_VERSION	6.0.1	//
+DATA	D:\pic_youtube_tutorials\uart_led.c	24;"	l	line:24
+_XTAL_FREQ::16000000	D:\pic_youtube_tutorials\uart_led.c	2;"	d	line:2	file:
+i	D:\pic_youtube_tutorials\uart_led.c	36;"	l	line:36
+main	D:\pic_youtube_tutorials\uart_led.c	58;"	f	line:58
+rec_data	D:\pic_youtube_tutorials\uart_led.c	60;"	l	line:60
+send_data	D:\pic_youtube_tutorials\uart_led.c	60;"	l	line:60
+uart_init	D:\pic_youtube_tutorials\uart_led.c	5;"	f	line:5
+uart_recieve_data	D:\pic_youtube_tutorials\uart_led.c	22;"	f	line:22
+uart_send_data	D:\pic_youtube_tutorials\uart_led.c	12;"	f	line:12	signature:(unsigned char data)
+uart_string_send_data	D:\pic_youtube_tutorials\uart_led.c	34;"	f	line:34	signature:(unsigned char *string, unsigned int string_length)
+value	D:\pic_youtube_tutorials\uart_led.c	47;"	l	line:47
+wait	D:\pic_youtube_tutorials\uart_led.c	45;"	f	line:45	signature:(unsigned char cmd)

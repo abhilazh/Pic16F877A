@@ -1,0 +1,335 @@
+
+
+HI-TECH Software PIC PRO Macro Assembler V9.83 build 10920 
+                                                                                               Wed Jun 15 15:46:35 2022
+
+HI-TECH Software Omniscient Code Generator (PRO mode) build 10920
+     1                           	processor	16F877A
+     2                           	opt	pw 120
+     3                           	opt	pm
+     4                           	psect	config,global,class=CONFIG,delta=2
+     5                           	psect	text25,local,class=CODE,delta=2
+     6                           	psect	cinit,global,class=CODE,delta=2
+     7                           	psect	cstackCOMMON,global,class=COMMON,space=1,delta=1
+     8                           	psect	maintext,global,class=CODE,delta=2
+     9                           	psect	text26,local,class=CODE,delta=2
+    10                           	psect	intentry,global,class=CODE,delta=2
+    11                           	psect	text27,local,class=CODE,delta=2
+    12                           	psect	pa_nodes,global,class=CODE,delta=2
+    13                           	dabs	1,0x7E,2
+    14  000A                     	;#
+    15                           
+    16                           	psect	config
+    17  2007  3F7A               	dw	16250	;#
+    18                           
+    19                           	psect	text25
+    20  0000                     __ptext25:	
+    21  005F                     _GIE	set	95
+    22  005C                     _INTE	set	92
+    23  0059                     _INTF	set	89
+    24  005E                     _PEIE	set	94
+    25  0038                     _RC0	set	56
+    26  0039                     _RC1	set	57
+    27  0087                     _TRISC	set	135
+    28  040E                     _INTEDG	set	1038
+    29                           
+    30                           	psect	cinit
+    31  0035                     start_initialization:	
+    32  0035                     end_of_initialization:	
+    33                           ;End of C runtime variable initialization code
+    34                           
+    35  0035  0183               	clrf	3
+    36  0036  120A  118A  282C   	ljmp	_main	;jump to C main() function
+    37                           
+    38                           	psect	cstackCOMMON
+    39  0070                     __pcstackCOMMON:	
+    40  0070                     ?_button_activity:	
+    41  0070                     ??_button_activity:	
+    42                           ; 0 bytes @ 0x0
+    43                           
+    44  0070                     ?_main:	
+    45                           ; 0 bytes @ 0x0
+    46                           
+    47                           
+    48                           ; 0 bytes @ 0x0
+    49  0070                     	ds	5
+    50  0075                     ??_main:	
+    51                           
+    52                           	psect	maintext
+    53  002C                     __pmaintext:	
+    54                           ; 0 bytes @ 0x5
+    55 ;;Data sizes: Strings 0, constant 0, data 0, bss 0, persistent 0 stack 0
+    56 ;;Auto spaces:   Size  Autos    Used
+    57 ;; COMMON          14      5       5
+    58 ;; BANK0           80      0       0
+    59 ;; BANK1           80      0       0
+    60 ;; BANK3           96      0       0
+    61 ;; BANK2           96      0       0
+    62 ;;
+    63 ;; Pointer list with targets:
+    64 ;;
+    65 ;; Critical Paths under _main in COMMON
+    66 ;;
+    67 ;;   None.
+    68 ;;
+    69 ;; Critical Paths under _button_activity in COMMON
+    70 ;;
+    71 ;;   None.
+    72 ;;
+    73 ;; Critical Paths under _main in BANK0
+    74 ;;
+    75 ;;   None.
+    76 ;;
+    77 ;; Critical Paths under _button_activity in BANK0
+    78 ;;
+    79 ;;   None.
+    80 ;;
+    81 ;; Critical Paths under _main in BANK1
+    82 ;;
+    83 ;;   None.
+    84 ;;
+    85 ;; Critical Paths under _button_activity in BANK1
+    86 ;;
+    87 ;;   None.
+    88 ;;
+    89 ;; Critical Paths under _main in BANK3
+    90 ;;
+    91 ;;   None.
+    92 ;;
+    93 ;; Critical Paths under _button_activity in BANK3
+    94 ;;
+    95 ;;   None.
+    96 ;;
+    97 ;; Critical Paths under _main in BANK2
+    98 ;;
+    99 ;;   None.
+   100 ;;
+   101 ;; Critical Paths under _button_activity in BANK2
+   102 ;;
+   103 ;;   None.
+   104 ;;
+   105 ;;Main: autosize = 0, tempsize = 0, incstack = 0, save=0
+   106 ;;
+   107 ;;
+   108 ;;Call Graph Tables:
+   109 ;;
+   110 ;; ---------------------------------------------------------------------------------
+   111 ;; (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+   112 ;; ---------------------------------------------------------------------------------
+   113 ;; (0) _main                                                 0     0      0       0
+   114 ;; ---------------------------------------------------------------------------------
+   115 ;; Estimated maximum stack depth 0
+   116 ;; ---------------------------------------------------------------------------------
+   117 ;; (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+   118 ;; ---------------------------------------------------------------------------------
+   119 ;; (1) _button_activity                                      5     5      0       0
+   120 ;;                                              0 COMMON     5     5      0
+   121 ;; ---------------------------------------------------------------------------------
+   122 ;; Estimated maximum stack depth 1
+   123 ;; ---------------------------------------------------------------------------------
+   124 ;; Call Graph Graphs:
+   125 ;; _main (ROOT)
+   126 ;;
+   127 ;; _button_activity (ROOT)
+   128 ;;
+   129 ;; Address spaces:
+   130 ;;Name               Size   Autos  Total    Cost      Usage
+   131 ;;BITCOMMON            E      0       0       0        0.0%
+   132 ;;EEDATA             100      0       0       0        0.0%
+   133 ;;NULL                 0      0       0       0        0.0%
+   134 ;;CODE                 0      0       0       0        0.0%
+   135 ;;COMMON               E      5       5       1       35.7%
+   136 ;;BITSFR0              0      0       0       1        0.0%
+   137 ;;SFR0                 0      0       0       1        0.0%
+   138 ;;BITSFR1              0      0       0       2        0.0%
+   139 ;;SFR1                 0      0       0       2        0.0%
+   140 ;;STACK                0      0       0       2        0.0%
+   141 ;;ABS                  0      0       0       3        0.0%
+   142 ;;BITBANK0            50      0       0       4        0.0%
+   143 ;;BITSFR3              0      0       0       4        0.0%
+   144 ;;SFR3                 0      0       0       4        0.0%
+   145 ;;BANK0               50      0       0       5        0.0%
+   146 ;;BITSFR2              0      0       0       5        0.0%
+   147 ;;SFR2                 0      0       0       5        0.0%
+   148 ;;BITBANK1            50      0       0       6        0.0%
+   149 ;;BANK1               50      0       0       7        0.0%
+   150 ;;BITBANK3            60      0       0       8        0.0%
+   151 ;;BANK3               60      0       0       9        0.0%
+   152 ;;BITBANK2            60      0       0      10        0.0%
+   153 ;;BANK2               60      0       0      11        0.0%
+   154 ;;DATA                 0      0       0      12        0.0%
+   155                           
+   156                           
+   157 ;; *************** function _main *****************
+   158 ;; Defined at:
+   159 ;;		line 18 in file "D:\pic_youtube_tutorials\interrupt.c"
+   160 ;; Parameters:    Size  Location     Type
+   161 ;;		None
+   162 ;; Auto vars:     Size  Location     Type
+   163 ;;		None
+   164 ;; Return value:  Size  Location     Type
+   165 ;;		None               void
+   166 ;; Registers used:
+   167 ;;		status,2
+   168 ;; Tracked objects:
+   169 ;;		On entry : 17F/0
+   170 ;;		On exit  : 17F/0
+   171 ;;		Unchanged: FFE80/0
+   172 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   173 ;;      Params:         0       0       0       0       0
+   174 ;;      Locals:         0       0       0       0       0
+   175 ;;      Temps:          0       0       0       0       0
+   176 ;;      Totals:         0       0       0       0       0
+   177 ;;Total ram usage:        0 bytes
+   178 ;; Hardware stack levels required when called:    1
+   179 ;; This function calls:
+   180 ;;		Nothing
+   181 ;; This function is called by:
+   182 ;;		Startup code after reset
+   183 ;; This function uses a non-reentrant model
+   184 ;;
+   185  002C                     _main:	
+   186                           
+   187                           ;interrupt.c: 20: GIE = 1;
+   188                           
+   189                           ; Regs used in _main: [status,2]
+   190  002C  178B               	bsf	11,7
+   191                           
+   192                           ;interrupt.c: 21: PEIE = 1;
+   193  002D  170B               	bsf	11,6
+   194                           
+   195                           ;interrupt.c: 22: INTE = 1;
+   196  002E  160B               	bsf	11,4
+   197                           
+   198                           ;interrupt.c: 23: INTEDG = 1;
+   199  002F  1683               	bsf	3,5	;RP0=1, select bank1
+   200  0030  1701               	bsf	1,6
+   201                           
+   202                           ;interrupt.c: 25: TRISC = 0x00;
+   203  0031  0187               	clrf	7	;volatile
+   204  0032                     l1755:	
+   205                           
+   206                           ;interrupt.c: 28: {
+   207                           ;interrupt.c: 29: RC0 = 1;
+   208  0032  1283               	bcf	3,5	;RP0=0, select bank0
+   209  0033  1407               	bsf	7,0
+   210  0034  2832               	goto	l1755
+   211  0035                     __end_of_main:	
+   212                           
+   213                           	psect	text26
+   214  000F                     __ptext26:	
+   215 ;; =============== function _main ends ============
+   216                           
+   217                           
+   218 ;; *************** function _button_activity *****************
+   219 ;; Defined at:
+   220 ;;		line 6 in file "D:\pic_youtube_tutorials\interrupt.c"
+   221 ;; Parameters:    Size  Location     Type
+   222 ;;		None
+   223 ;; Auto vars:     Size  Location     Type
+   224 ;;		None
+   225 ;; Return value:  Size  Location     Type
+   226 ;;		None               void
+   227 ;; Registers used:
+   228 ;;		wreg
+   229 ;; Tracked objects:
+   230 ;;		On entry : 0/0
+   231 ;;		On exit  : 0/0
+   232 ;;		Unchanged: 0/0
+   233 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   234 ;;      Params:         0       0       0       0       0
+   235 ;;      Locals:         0       0       0       0       0
+   236 ;;      Temps:          5       0       0       0       0
+   237 ;;      Totals:         5       0       0       0       0
+   238 ;;Total ram usage:        5 bytes
+   239 ;; Hardware stack levels used:    1
+   240 ;; This function calls:
+   241 ;;		Nothing
+   242 ;; This function is called by:
+   243 ;;		Interrupt level 1
+   244 ;; This function uses a non-reentrant model
+   245 ;;
+   246  000F                     _button_activity:	
+   247                           
+   248                           ;interrupt.c: 7: if(INTF == 1)
+   249  000F  1C8B               	btfss	11,1
+   250  0010  2825               	goto	i1l688
+   251                           
+   252                           ;interrupt.c: 8: {
+   253                           ;interrupt.c: 9: RC1 = 1;
+   254  0011  1283               	bcf	3,5	;RP0=0, select bank0
+   255  0012  1303               	bcf	3,6	;RP1=0, select bank0
+   256  0013  3015               	movlw	21
+   257  0014  1487               	bsf	7,1
+   258                           
+   259                           ;interrupt.c: 10: _delay((unsigned long)((1000)*(16000000/4000.0)));
+   260  0015  00F2               	movwf	??_button_activity+2
+   261  0016  304B               	movlw	75
+   262  0017  00F1               	movwf	??_button_activity+1
+   263  0018  30D1               	movlw	209
+   264  0019  00F0               	movwf	??_button_activity
+   265  001A                     u2_27:	
+   266  001A  0BF0               	decfsz	??_button_activity,f
+   267  001B  281A               	goto	u2_27
+   268  001C  0BF1               	decfsz	??_button_activity+1,f
+   269  001D  281A               	goto	u2_27
+   270  001E  0BF2               	decfsz	??_button_activity+2,f
+   271  001F  281A               	goto	u2_27
+   272  0020  0064               	clrwdt
+   273                           
+   274                           ;interrupt.c: 11: RC1 = 0;
+   275  0021  1283               	bcf	3,5	;RP0=0, select bank0
+   276  0022  1303               	bcf	3,6	;RP1=0, select bank0
+   277  0023  1087               	bcf	7,1
+   278                           
+   279                           ;interrupt.c: 12: INTF = 0;
+   280  0024  108B               	bcf	11,1
+   281  0025                     i1l688:	
+   282  0025  0874               	movf	??_button_activity+4,w
+   283  0026  008A               	movwf	10
+   284  0027  0E73               	swapf	(??_button_activity+3)^(0+-128),w
+   285  0028  0083               	movwf	3
+   286  0029  0EFE               	swapf	126,f
+   287  002A  0E7E               	swapf	126,w
+   288  002B  0009               	retfie
+   289  002C                     __end_of_button_activity:	
+   290                           
+   291                           	psect	intentry
+   292  0004                     __pintentry:	
+   293                           ; Regs used in _button_activity: [wreg]
+   294                           
+   295  0004                     interrupt_function:	
+   296  007E                     saved_w	set	btemp
+   297  0004  00FE               	movwf	btemp
+   298  0005  0E03               	swapf	3,w
+   299  0006  00F3               	movwf	??_button_activity+3
+   300  0007  080A               	movf	10,w
+   301  0008  00F4               	movwf	??_button_activity+4
+   302  0009  120A  118A  280F   	ljmp	_button_activity
+   303                           
+   304                           	psect	text27
+   305  0000                     __ptext27:	
+   306 ;; =============== function _button_activity ends ============
+   307                           
+   308  007E                     btemp	set	126	;btemp
+   309  007E                     wtemp0	set	126
+
+
+HI-TECH Software PICC Macro Assembler V9.83 build 10920 
+Symbol Table                                                                                   Wed Jun 15 15:46:35 2022
+
+                     _GIE 005F                       _RC0 0038                       _RC1 0039  
+       ??_button_activity 0070                      l1751 0000                      l1753 0000  
+                    l1755 0032                      _PEIE 005E                      _INTE 005C  
+                    _INTF 0059                      u2_27 001A                      _main 002C  
+                    btemp 007E                      start 000C                     ?_main 0070  
+                   i1l688 0025                     _TRISC 0087                     pclath 000A  
+                   status 0003                     wtemp0 007E              __end_of_main 0035  
+                  ??_main 0075                    i1l1741 0000                    i1l1745 0000  
+                  i1l1747 0000                    i1l1749 0000                    _INTEDG 040E  
+                  saved_w 007E            __pcstackCOMMON 0070           _button_activity 000F  
+              __pmaintext 002C                __pintentry 0004   __end_of_button_activity 002C  
+    end_of_initialization 0035          ?_button_activity 0070       start_initialization 0035  
+       interrupt_function 0004                  __ptext25 0000                  __ptext26 000F  
+                __ptext27 0000             __size_of_main 0009  __size_of_button_activity 001D  
+                intlevel1 0000  

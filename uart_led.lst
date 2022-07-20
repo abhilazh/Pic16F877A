@@ -1,0 +1,583 @@
+
+
+HI-TECH Software PIC LITE Macro Assembler V9.83 build 10920 
+                                                                                               Fri Jul 08 23:22:58 2022
+
+HI-TECH Software Omniscient Code Generator (Lite mode) build 10920
+     1  0000                     opt subtitle "HI-TECH Software Omniscient Code Generator (Lite mode) build 10920"
+     2                           
+     3                           opt pagewidth 120
+     4                           
+     5                           	opt lm
+     6                           
+     7                           	processor	16F877A
+     8                           clrc	macro
+     9                           	bcf	3,0
+    10  0000                     	endm
+    11                           clrz	macro
+    12                           	bcf	3,2
+    13  0000                     	endm
+    14                           setc	macro
+    15                           	bsf	3,0
+    16  0000                     	endm
+    17                           setz	macro
+    18                           	bsf	3,2
+    19  0000                     	endm
+    20                           skipc	macro
+    21                           	btfss	3,0
+    22  0000                     	endm
+    23                           skipz	macro
+    24                           	btfss	3,2
+    25  0000                     	endm
+    26                           skipnc	macro
+    27                           	btfsc	3,0
+    28  0000                     	endm
+    29                           skipnz	macro
+    30                           	btfsc	3,2
+    31  0000                     	endm
+    32  0000                     indf	equ	0
+    33  0000                     indf0	equ	0
+    34  0002                     pc	equ	2
+    35  0002                     pcl	equ	2
+    36  0003                     status	equ	3
+    37  0004                     fsr	equ	4
+    38  0004                     fsr0	equ	4
+    39  0001                     c	equ	1
+    40  0000                     z	equ	0
+    41  000A                     pclath	equ	10
+    42                           # 3 "D:\pic_youtube_tutorials\uart_led.c"
+    43                           	psect config,class=CONFIG,delta=2 ;#
+    44                           # 3 "D:\pic_youtube_tutorials\uart_led.c"
+    45  2007  3F7A               	dw 0x3F7A ;#
+    46                           	FNCALL	_main,_uart_init
+    47                           	FNCALL	_main,_wait
+    48                           	FNROOT	_main
+    49                           	global	_RCREG
+    50                           psect	text93,local,class=CODE,delta=2
+    51                           global __ptext93
+    52  0000                     __ptext93:
+    53  001A                     _RCREG	set	26
+    54                           	global	_RCSTA
+    55  0018                     _RCSTA	set	24
+    56                           	global	_TXREG
+    57  0019                     _TXREG	set	25
+    58                           	global	_CARRY
+    59  0018                     _CARRY	set	24
+    60                           	global	_GIE
+    61  005F                     _GIE	set	95
+    62                           	global	_PEIE
+    63  005E                     _PEIE	set	94
+    64                           	global	_RB1
+    65  0031                     _RB1	set	49
+    66                           	global	_RB2
+    67  0032                     _RB2	set	50
+    68                           	global	_RCIF
+    69  0065                     _RCIF	set	101
+    70                           	global	_TXIF
+    71  0064                     _TXIF	set	100
+    72                           	global	_SPBRG
+    73  0099                     _SPBRG	set	153
+    74                           	global	_TRISB
+    75  0086                     _TRISB	set	134
+    76                           	global	_TRISC
+    77  0087                     _TRISC	set	135
+    78                           	global	_TXSTA
+    79  0098                     _TXSTA	set	152
+    80                           	global	_EEADR
+    81  010D                     _EEADR	set	269
+    82                           	global	_EEDATA
+    83  010C                     _EEDATA	set	268
+    84                           	global	_EECON1
+    85  018C                     _EECON1	set	396
+    86                           	global	_EECON2
+    87  018D                     _EECON2	set	397
+    88                           	global	_RD
+    89  0C60                     _RD	set	3168
+    90                           	global	_WR
+    91  0C61                     _WR	set	3169
+    92                           	global	_WREN
+    93  0C62                     _WREN	set	3170
+    94                           	file	"uart_led.as"
+    95                           	line	#
+    96                           psect cinit,class=CODE,delta=2
+    97                           global start_initialization
+    98  07B0                     start_initialization:
+    99                           
+   100                           psect cinit,class=CODE,delta=2
+   101                           global end_of_initialization
+   102                           
+   103                           ;End of C runtime variable initialization code
+   104                           
+   105  07B0                     end_of_initialization:
+   106  07B0  0183               clrf status
+   107  07B1  120A  118A  2FD6   ljmp _main	;jump to C main() function
+   108                           psect	cstackCOMMON,class=COMMON,space=1
+   109                           global __pcstackCOMMON
+   110  0070                     __pcstackCOMMON:
+   111                           	global	?_uart_init
+   112  0070                     ?_uart_init:	; 0 bytes @ 0x0
+   113                           	global	??_uart_init
+   114  0070                     ??_uart_init:	; 0 bytes @ 0x0
+   115                           	global	?_wait
+   116  0070                     ?_wait:	; 0 bytes @ 0x0
+   117                           	global	??_wait
+   118  0070                     ??_wait:	; 0 bytes @ 0x0
+   119                           	global	?_main
+   120  0070                     ?_main:	; 0 bytes @ 0x0
+   121  0070                     	ds	1
+   122                           	global	wait@cmd
+   123  0071                     wait@cmd:	; 1 bytes @ 0x1
+   124  0071                     	ds	1
+   125                           	global	wait@value
+   126  0072                     wait@value:	; 1 bytes @ 0x2
+   127  0072                     	ds	1
+   128                           	global	??_main
+   129  0073                     ??_main:	; 0 bytes @ 0x3
+   130 ;;Data sizes: Strings 0, constant 0, data 0, bss 0, persistent 0 stack 0
+   131 ;;Auto spaces:   Size  Autos    Used
+   132 ;; COMMON          14      3       3
+   133 ;; BANK0           80      0       0
+   134 ;; BANK1           80      0       0
+   135 ;; BANK3           96      0       0
+   136 ;; BANK2           96      0       0
+   137                           
+   138 ;;
+   139 ;; Pointer list with targets:
+   140                           
+   141                           
+   142                           
+   143 ;;
+   144 ;; Critical Paths under _main in COMMON
+   145 ;;
+   146 ;;   _main->_wait
+   147 ;;
+   148 ;; Critical Paths under _main in BANK0
+   149 ;;
+   150 ;;   None.
+   151 ;;
+   152 ;; Critical Paths under _main in BANK1
+   153 ;;
+   154 ;;   None.
+   155 ;;
+   156 ;; Critical Paths under _main in BANK3
+   157 ;;
+   158 ;;   None.
+   159 ;;
+   160 ;; Critical Paths under _main in BANK2
+   161 ;;
+   162 ;;   None.
+   163                           
+   164 ;;
+   165 ;;Main: autosize = 0, tempsize = 0, incstack = 0, save=0
+   166 ;;
+   167                           
+   168 ;;
+   169 ;;Call Graph Tables:
+   170 ;;
+   171 ;; ---------------------------------------------------------------------------------
+   172 ;; (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+   173 ;; ---------------------------------------------------------------------------------
+   174 ;; (0) _main                                                 2     2      0      30
+   175 ;;                          _uart_init
+   176 ;;                               _wait
+   177 ;; ---------------------------------------------------------------------------------
+   178 ;; (1) _wait                                                 3     3      0      30
+   179 ;;                                              0 COMMON     3     3      0
+   180 ;; ---------------------------------------------------------------------------------
+   181 ;; (1) _uart_init                                            0     0      0       0
+   182 ;; ---------------------------------------------------------------------------------
+   183 ;; Estimated maximum stack depth 1
+   184 ;; ---------------------------------------------------------------------------------
+   185                           
+   186 ;; Call Graph Graphs:
+   187                           
+   188 ;; _main (ROOT)
+   189 ;;   _uart_init
+   190 ;;   _wait
+   191 ;;
+   192                           
+   193 ;; Address spaces:
+   194                           
+   195 ;;Name               Size   Autos  Total    Cost      Usage
+   196 ;;BITCOMMON            E      0       0       0        0.0%
+   197 ;;EEDATA             100      0       0       0        0.0%
+   198 ;;NULL                 0      0       0       0        0.0%
+   199 ;;CODE                 0      0       0       0        0.0%
+   200 ;;COMMON               E      3       3       1       21.4%
+   201 ;;BITSFR0              0      0       0       1        0.0%
+   202 ;;SFR0                 0      0       0       1        0.0%
+   203 ;;BITSFR1              0      0       0       2        0.0%
+   204 ;;SFR1                 0      0       0       2        0.0%
+   205 ;;STACK                0      0       1       2        0.0%
+   206 ;;ABS                  0      0       0       3        0.0%
+   207 ;;BITBANK0            50      0       0       4        0.0%
+   208 ;;BITSFR3              0      0       0       4        0.0%
+   209 ;;SFR3                 0      0       0       4        0.0%
+   210 ;;BANK0               50      0       0       5        0.0%
+   211 ;;BITSFR2              0      0       0       5        0.0%
+   212 ;;SFR2                 0      0       0       5        0.0%
+   213 ;;BITBANK1            50      0       0       6        0.0%
+   214 ;;BANK1               50      0       0       7        0.0%
+   215 ;;BITBANK3            60      0       0       8        0.0%
+   216 ;;BANK3               60      0       0       9        0.0%
+   217 ;;BITBANK2            60      0       0      10        0.0%
+   218 ;;BANK2               60      0       0      11        0.0%
+   219 ;;DATA                 0      0       0      12        0.0%
+   220                           
+   221                           	global	_main
+   222                           psect	maintext,global,class=CODE,delta=2
+   223                           global __pmaintext
+   224  07D6                     __pmaintext:
+   225                           
+   226 ;; *************** function _main *****************
+   227 ;; Defined at:
+   228 ;;		line 59 in file "D:\pic_youtube_tutorials\uart_led.c"
+   229 ;; Parameters:    Size  Location     Type
+   230 ;;		None
+   231 ;; Auto vars:     Size  Location     Type
+   232 ;;  send_data       1    0        unsigned char 
+   233 ;;  rec_data        1    0        unsigned char 
+   234 ;; Return value:  Size  Location     Type
+   235 ;;		None               void
+   236 ;; Registers used:
+   237 ;;		wreg, status,2, status,0, pclath, cstack
+   238 ;; Tracked objects:
+   239 ;;		On entry : 17F/0
+   240 ;;		On exit  : 0/0
+   241 ;;		Unchanged: 0/0
+   242 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   243 ;;      Params:         0       0       0       0       0
+   244 ;;      Locals:         0       0       0       0       0
+   245 ;;      Temps:          0       0       0       0       0
+   246 ;;      Totals:         0       0       0       0       0
+   247 ;;Total ram usage:        0 bytes
+   248 ;; Hardware stack levels required when called:    1
+   249 ;; This function calls:
+   250 ;;		_uart_init
+   251 ;;		_wait
+   252 ;; This function is called by:
+   253 ;;		Startup code after reset
+   254 ;; This function uses a non-reentrant model
+   255 ;;
+   256                           psect	maintext
+   257                           	file	"D:\pic_youtube_tutorials\uart_led.c"
+   258                           	line	59
+   259                           	global	__size_of_main
+   260  002A                     	__size_of_main	equ	__end_of_main-_main
+   261                           	
+   262  07D6                     _main:	
+   263                           	opt	stack 7
+   264                           ; Regs used in _main: [wreg+status,2+status,0+pclath+cstack]
+   265                           	line	61
+   266                           	
+   267  07D6                     l2648:	
+   268                           ;uart_led.c: 60: unsigned char rec_data, send_data;
+   269                           ;uart_led.c: 61: TRISB = 0x00;
+   270  07D6  1683               	bsf	status, 5	;RP0=1, select bank1
+   271  07D7  1303               	bcf	status, 6	;RP1=0, select bank1
+   272  07D8  0186               	clrf	(134)^080h	;volatile
+   273                           	line	62
+   274                           	
+   275  07D9                     l2650:	
+   276                           ;uart_led.c: 62: TRISC = 0x80;
+   277  07D9  3080               	movlw	(080h)
+   278  07DA  0087               	movwf	(135)^080h	;volatile
+   279                           	line	63
+   280                           	
+   281  07DB                     l2652:	
+   282                           ;uart_led.c: 63: GIE = 1;
+   283  07DB  178B               	bsf	(95/8),(95)&7
+   284                           	line	64
+   285                           	
+   286  07DC                     l2654:	
+   287                           ;uart_led.c: 64: PEIE = 1;
+   288  07DC  170B               	bsf	(94/8),(94)&7
+   289                           	line	65
+   290                           	
+   291  07DD                     l2656:	
+   292                           ;uart_led.c: 65: uart_init();
+   293  07DD  120A  118A  27B4   	fcall	_uart_init
+              120A  118A         
+   294                           	line	66
+   295                           	
+   296  07E2                     l2658:	
+   297                           ;uart_led.c: 66: RB1 =1;
+   298  07E2  1283               	bcf	status, 5	;RP0=0, select bank0
+   299  07E3  1303               	bcf	status, 6	;RP1=0, select bank0
+   300  07E4  1486               	bsf	(49/8),(49)&7
+   301                           	line	67
+   302                           	
+   303  07E5                     l2660:	
+   304                           ;uart_led.c: 67: RB2 = 1;
+   305  07E5  1506               	bsf	(50/8),(50)&7
+   306  07E6  2FE7               	goto	l2662
+   307                           	line	68
+   308                           ;uart_led.c: 68: while(1)
+   309                           	
+   310  07E7                     l714:	
+   311                           	line	71
+   312                           	
+   313  07E7                     l2662:	
+   314                           ;uart_led.c: 69: {
+   315                           ;uart_led.c: 71: wait('a');
+   316  07E7  3061               	movlw	(061h)
+   317  07E8  120A  118A  27C1   	fcall	_wait
+              120A  118A         
+   318                           	line	72
+   319                           	
+   320  07ED                     l2664:	
+   321                           ;uart_led.c: 72: RB1 =0;
+   322  07ED  1283               	bcf	status, 5	;RP0=0, select bank0
+   323  07EE  1303               	bcf	status, 6	;RP1=0, select bank0
+   324  07EF  1086               	bcf	(49/8),(49)&7
+   325                           	line	73
+   326                           	
+   327  07F0                     l2666:	
+   328                           ;uart_led.c: 73: RB2 =0;
+   329  07F0  1106               	bcf	(50/8),(50)&7
+   330                           	line	75
+   331                           	
+   332  07F1                     l2668:	
+   333                           ;uart_led.c: 75: wait('b');
+   334  07F1  3062               	movlw	(062h)
+   335  07F2  120A  118A  27C1   	fcall	_wait
+              120A  118A         
+   336                           	line	76
+   337                           	
+   338  07F7                     l2670:	
+   339                           ;uart_led.c: 76: RB1 =1;
+   340  07F7  1283               	bcf	status, 5	;RP0=0, select bank0
+   341  07F8  1303               	bcf	status, 6	;RP1=0, select bank0
+   342  07F9  1486               	bsf	(49/8),(49)&7
+   343                           	line	77
+   344                           	
+   345  07FA                     l2672:	
+   346                           ;uart_led.c: 77: RB2 = 1;
+   347  07FA  1506               	bsf	(50/8),(50)&7
+   348  07FB  2FE7               	goto	l2662
+   349                           	line	79
+   350                           	
+   351  07FC                     l715:	
+   352                           	line	68
+   353  07FC  2FE7               	goto	l2662
+   354                           	
+   355  07FD                     l716:	
+   356                           	line	82
+   357                           	
+   358  07FD                     l717:	
+   359                           	global	start
+   360  07FD  120A  118A  2800   	ljmp	start
+   361                           	opt stack 0
+   362                           GLOBAL	__end_of_main
+   363  0800                     	__end_of_main:
+   364 ;; =============== function _main ends ============
+   365                           
+   366                           	signat	_main,88
+   367                           	global	_wait
+   368                           psect	text94,local,class=CODE,delta=2
+   369                           global __ptext94
+   370  07C1                     __ptext94:
+   371                           
+   372 ;; *************** function _wait *****************
+   373 ;; Defined at:
+   374 ;;		line 46 in file "D:\pic_youtube_tutorials\uart_led.c"
+   375 ;; Parameters:    Size  Location     Type
+   376 ;;  cmd             1    wreg     unsigned char 
+   377 ;; Auto vars:     Size  Location     Type
+   378 ;;  cmd             1    1[COMMON] unsigned char 
+   379 ;;  value           1    2[COMMON] unsigned char 
+   380 ;; Return value:  Size  Location     Type
+   381 ;;		None               void
+   382 ;; Registers used:
+   383 ;;		wreg
+   384 ;; Tracked objects:
+   385 ;;		On entry : 0/0
+   386 ;;		On exit  : 0/0
+   387 ;;		Unchanged: 0/0
+   388 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   389 ;;      Params:         0       0       0       0       0
+   390 ;;      Locals:         2       0       0       0       0
+   391 ;;      Temps:          1       0       0       0       0
+   392 ;;      Totals:         3       0       0       0       0
+   393 ;;Total ram usage:        3 bytes
+   394 ;; Hardware stack levels used:    1
+   395 ;; This function calls:
+   396 ;;		Nothing
+   397 ;; This function is called by:
+   398 ;;		_main
+   399 ;; This function uses a non-reentrant model
+   400 ;;
+   401                           psect	text94
+   402                           	file	"D:\pic_youtube_tutorials\uart_led.c"
+   403                           	line	46
+   404                           	global	__size_of_wait
+   405  0015                     	__size_of_wait	equ	__end_of_wait-_wait
+   406                           	
+   407  07C1                     _wait:	
+   408                           	opt	stack 7
+   409                           ; Regs used in _wait: [wreg]
+   410                           ;wait@cmd stored from wreg
+   411  07C1  00F1               	movwf	(wait@cmd)
+   412                           	line	48
+   413                           ;uart_led.c: 47: char value;
+   414                           ;uart_led.c: 48: do
+   415                           	
+   416  07C2                     l706:	
+   417                           	line	50
+   418                           ;uart_led.c: 49: {
+   419                           ;uart_led.c: 50: while(RCIF==0);
+   420  07C2  2FC3               	goto	l707
+   421                           	
+   422  07C3                     l708:	
+   423                           	
+   424  07C3                     l707:	
+   425  07C3  1283               	bcf	status, 5	;RP0=0, select bank0
+   426  07C4  1303               	bcf	status, 6	;RP1=0, select bank0
+   427  07C5  1E8C               	btfss	(101/8),(101)&7
+   428  07C6  2FC8               	goto	u41
+   429  07C7  2FC9               	goto	u40
+   430  07C8                     u41:
+   431  07C8  2FC3               	goto	l707
+   432  07C9                     u40:
+   433                           	
+   434  07C9                     l709:	
+   435                           	line	51
+   436                           ;uart_led.c: 51: RCIF = 1;
+   437  07C9  168C               	bsf	(101/8),(101)&7
+   438                           	line	52
+   439                           	
+   440  07CA                     l1788:	
+   441                           ;uart_led.c: 52: value = RCREG;
+   442  07CA  081A               	movf	(26),w	;volatile
+   443  07CB  00F0               	movwf	(??_wait+0)+0
+   444  07CC  0870               	movf	(??_wait+0)+0,w
+   445  07CD  00F2               	movwf	(wait@value)
+   446                           	line	53
+   447                           ;uart_led.c: 53: }while(value!=cmd);
+   448  07CE  0872               	movf	(wait@value),w
+   449  07CF  0671               	xorwf	(wait@cmd),w
+   450  07D0  1D03               	skipz
+   451  07D1  2FD3               	goto	u51
+   452  07D2  2FD4               	goto	u50
+   453  07D3                     u51:
+   454  07D3  2FC2               	goto	l706
+   455  07D4                     u50:
+   456  07D4  2FD5               	goto	l711
+   457                           	
+   458  07D5                     l710:	
+   459                           	line	56
+   460                           	
+   461  07D5                     l711:	
+   462  07D5  0008               	return
+   463                           	opt stack 0
+   464                           GLOBAL	__end_of_wait
+   465  07D6                     	__end_of_wait:
+   466 ;; =============== function _wait ends ============
+   467                           
+   468                           	signat	_wait,4216
+   469                           	global	_uart_init
+   470                           psect	text95,local,class=CODE,delta=2
+   471                           global __ptext95
+   472  07B4                     __ptext95:
+   473                           
+   474 ;; *************** function _uart_init *****************
+   475 ;; Defined at:
+   476 ;;		line 6 in file "D:\pic_youtube_tutorials\uart_led.c"
+   477 ;; Parameters:    Size  Location     Type
+   478 ;;		None
+   479 ;; Auto vars:     Size  Location     Type
+   480 ;;		None
+   481 ;; Return value:  Size  Location     Type
+   482 ;;		None               void
+   483 ;; Registers used:
+   484 ;;		wreg
+   485 ;; Tracked objects:
+   486 ;;		On entry : 0/0
+   487 ;;		On exit  : 0/0
+   488 ;;		Unchanged: 0/0
+   489 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   490 ;;      Params:         0       0       0       0       0
+   491 ;;      Locals:         0       0       0       0       0
+   492 ;;      Temps:          0       0       0       0       0
+   493 ;;      Totals:         0       0       0       0       0
+   494 ;;Total ram usage:        0 bytes
+   495 ;; Hardware stack levels used:    1
+   496 ;; This function calls:
+   497 ;;		Nothing
+   498 ;; This function is called by:
+   499 ;;		_main
+   500 ;; This function uses a non-reentrant model
+   501 ;;
+   502                           psect	text95
+   503                           	file	"D:\pic_youtube_tutorials\uart_led.c"
+   504                           	line	6
+   505                           	global	__size_of_uart_init
+   506  000D                     	__size_of_uart_init	equ	__end_of_uart_init-_uart_init
+   507                           	
+   508  07B4                     _uart_init:	
+   509                           	opt	stack 7
+   510                           ; Regs used in _uart_init: [wreg]
+   511                           	line	7
+   512                           	
+   513  07B4                     l1764:	
+   514                           ;uart_led.c: 7: TXSTA = 0x24;
+   515  07B4  3024               	movlw	(024h)
+   516  07B5  1683               	bsf	status, 5	;RP0=1, select bank1
+   517  07B6  1303               	bcf	status, 6	;RP1=0, select bank1
+   518  07B7  0098               	movwf	(152)^080h	;volatile
+   519                           	line	8
+   520                           ;uart_led.c: 8: RCSTA = 0x90;
+   521  07B8  3090               	movlw	(090h)
+   522  07B9  1283               	bcf	status, 5	;RP0=0, select bank0
+   523  07BA  1303               	bcf	status, 6	;RP1=0, select bank0
+   524  07BB  0098               	movwf	(24)	;volatile
+   525                           	line	9
+   526                           ;uart_led.c: 9: SPBRG = 103;
+   527  07BC  3067               	movlw	(067h)
+   528  07BD  1683               	bsf	status, 5	;RP0=1, select bank1
+   529  07BE  1303               	bcf	status, 6	;RP1=0, select bank1
+   530  07BF  0099               	movwf	(153)^080h	;volatile
+   531                           	line	10
+   532                           	
+   533  07C0                     l685:	
+   534  07C0  0008               	return
+   535                           	opt stack 0
+   536                           GLOBAL	__end_of_uart_init
+   537  07C1                     	__end_of_uart_init:
+   538 ;; =============== function _uart_init ends ============
+   539                           
+   540                           	signat	_uart_init,88
+   541                           psect	text96,local,class=CODE,delta=2
+   542                           global __ptext96
+   543  0000                     __ptext96:
+   544                           	global	btemp
+   545  007E                     	btemp set 07Eh
+   546                           
+   547                           	DABS	1,126,2	;btemp
+   548                           	global	wtemp0
+   549  007E                     	wtemp0 set btemp
+
+
+HI-TECH Software PICC Macro Assembler V9.83 build 10920 
+Symbol Table                                                                                   Fri Jul 08 23:22:58 2022
+
+                  _RD 0C60                    u40 07C9                    u41 07C8                    u50 07D4  
+                  u51 07D3                    _WR 0C61                   l710 07D5                   l711 07D5  
+                 l706 07C2                   l714 07E7                   l707 07C3                   l715 07FC  
+                 l708 07C3                   l716 07FD                   l709 07C9                   l717 07FD  
+                 l685 07C0                   _GIE 005F                   _RB1 0031                   _RB2 0032  
+                l2650 07D9                  l1764 07B4                  l2660 07E5                  l2652 07DB  
+                l2670 07F7                  l2662 07E7                  l2654 07DC                  l2672 07FA  
+                l2664 07ED                  l2656 07DD                  l2648 07D6                  l2666 07F0  
+                l2658 07E2                  l1788 07CA                  l2668 07F1                  _PEIE 005E  
+                _RCIF 0065                  _WREN 0C62                  _TXIF 0064                  _main 07D6  
+                _wait 07C1                  btemp 007E                  start 0000                 ?_main 0070  
+               _EEADR 010D                 ?_wait 0070                 _CARRY 0018                 _RCREG 001A  
+               _RCSTA 0018                 _SPBRG 0099                 _TRISB 0086                 _TRISC 0087  
+               _TXREG 0019                 _TXSTA 0098                 status 0003                 wtemp0 007E  
+        __end_of_main 0800          __end_of_wait 07D6                ??_main 0073                ??_wait 0070  
+              _EEDATA 010C                _EECON1 018C                _EECON2 018D        __pcstackCOMMON 0070  
+          __pmaintext 07D6    __size_of_uart_init 000D  end_of_initialization 07B0     __end_of_uart_init 07C1  
+             wait@cmd 0071   start_initialization 07B0             _uart_init 07B4            ?_uart_init 0070  
+            __ptext93 0000              __ptext94 07C1              __ptext95 07B4              __ptext96 0000  
+       __size_of_main 002A             wait@value 0072         __size_of_wait 0015           ??_uart_init 0070  

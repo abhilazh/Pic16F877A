@@ -1,0 +1,15 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.5.4	//
+!_TAG_REVISION_NAME	MCHPTags	//
+!_TAG_REVISION_VERSION	6.0.1	//
+_XTAL_FREQ::16000000	D:\pic_youtube_tutorials\uart_led1.c	2;"	d	line:2	file:
+main	D:\pic_youtube_tutorials\uart_led1.c	41;"	f	line:41
+rec_data	D:\pic_youtube_tutorials\uart_led1.c	31;"	l	line:31
+uart_init	D:\pic_youtube_tutorials\uart_led1.c	5;"	f	line:5
+uart_receive	D:\pic_youtube_tutorials\uart_led1.c	28;"	f	line:28
+uart_string_transmit	D:\pic_youtube_tutorials\uart_led1.c	19;"	f	line:19	signature:(unsigned char *string, unsigned int string_length)
+uart_transmit	D:\pic_youtube_tutorials\uart_led1.c	13;"	f	line:13	signature:(unsigned char data)
